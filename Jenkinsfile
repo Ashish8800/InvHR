@@ -2,7 +2,7 @@ pipeline{
     agent any
     
     environment {
-        GITHUB_TOKEN= credentials('github-token_2')
+        GITHUB_TOKEN= credentials('ashish_git')
         PATH = "$PATH:/usr/bin" // Add the directory where docker-compose is installed
     }
     
@@ -10,7 +10,7 @@ pipeline{
         stage("Clone Code"){
             steps{
                 echo "Cloning the code"
-                git branch: 'docker', credentialsId: 'github-token_2', url: 'https://github.com/Ashish8800/InvHR'
+                git branch: 'main', credentialsId: 'ashish_git', url: 'https://github.com/Ashish8800/InvHR'
             }
             
         }
