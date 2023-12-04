@@ -19,9 +19,7 @@ services:
 
   backend:
     container_name: backend
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: ghcr.io/ashish8800/invihr-backend:latest
     networks:
       - default
       - frontend
@@ -40,9 +38,7 @@ services:
 
   frontend:
     container_name: frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: ghcr.io/ashish8800/invihr-frontend:latest
     networks:
       - frontend
     env_file:
