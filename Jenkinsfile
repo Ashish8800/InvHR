@@ -16,14 +16,14 @@ pipeline{
             }
                        
         }   
-
+        
         stage("building the backend code"){
             steps{
                 echo "Building the Image"
                 sh "cd ${WORKSPACE}/backend && docker build -t ghcr.io/ashish8800/invihr-backend:latest ."
             }
                        
-        }   
+        }    
             
         
         stage("Push to Docker Hub"){
