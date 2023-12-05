@@ -1,21 +1,21 @@
 version: "3"
 services:
-  mongo:
-    container_name: mongodb
-    image: mongo
-    restart: always
-    ports:
-      - "27018:27017"
-    networks:
-      - default
-    volumes:
-      - ./backend/docker-setup/mongo/db-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-      - ./backend/docker-setup/mongo/mongo-volume:/data/db
-    environment:
-      - MONGO_INITDB_DATABASE=InviHR
-      - MONGO_INITDB_USER=InviTestAdmin
-      - MONGO_INITDB_PASSWORD=Invi-123
-      - MONGO_INITDB_CLUSTER=cluster0.fvqeigj
+  # mongo:
+  #   container_name: mongodb
+  #   image: mongo
+  #   restart: always
+  #   ports:
+  #     - "27018:27017"
+  #   networks:
+  #     - default
+  #   volumes:
+  #     - ./backend/docker-setup/mongo/db-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+  #     - ./backend/docker-setup/mongo/mongo-volume:/data/db
+  #   environment:
+  #     - MONGO_INITDB_DATABASE=InviHR
+  #     - MONGO_INITDB_USER=InviTestAdmin
+  #     - MONGO_INITDB_PASSWORD=Invi-123
+  #     - MONGO_INITDB_CLUSTER=cluster0.fvqeigj
 
   backend:
     container_name: backend
@@ -31,8 +31,8 @@ services:
       - ./backend/.env
     # tty: true
     # stdin_open: true
-    depends_on:
-      - mongo
+    # depends_on:
+    #   - mongo
     ports:
       - "5107:5107"
 
